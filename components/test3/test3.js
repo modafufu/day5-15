@@ -41,6 +41,15 @@ fullColor:'0,0,0'
       this.setData({
         '_rgb.b':this.data._rgb.b+5>=255?255:this.data._rgb.b+5
       })
+    },
+    _randomColor(){
+      this.setData({
+        _rgb:{
+          r:Math.floor(Math.random()*256),
+          g:Math.floor(Math.random()*256),
+          b:Math.floor(Math.random()*256),
+        }
+      })
     }
 
   },
@@ -49,6 +58,26 @@ fullColor:'0,0,0'
         this.setData({
           fullColor:`${obj.r},${obj.g},${obj.b}`
         })
+    }
+  },
+  lifetimes: {
+    created(){
+      console.log('created-0')
+    },
+    attached(){
+      console.log('attach-0-')
+    },
+  },
+  pageLifetimes:{
+    show(){
+      console.log('show')
+      this._randomColor()
+    },
+    hide(){
+      console.log('hide')
+    },
+    resize(){
+      console.log('resize')
     }
   }
 })
