@@ -6,16 +6,31 @@
     "pages/index/index",
     "pages/logs/logs"
   ],
+  "preloadRule": {
+    "pages/contact/contact":{
+      "network":"all",
+      "packages":["pkgA"]
+    }
+  },
+  "subpackages": [
+    {"root": "pkgA",
+ "name": "p1",
+ "pages": [
+   "pages/cat/cat",
+   "pages/dog/dog"
+ ]}
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "Weixin",
     "navigationBarBackgroundColor": "#ffffff"
   },
   "tabBar": {
+    "custom": true,
     "list": [
       {
         "pagePath": "pages/home/home",
-      "text": "home",
+      "text": "首页",
       "iconPath": "/images/tab/home.png",
       "selectedIconPath": "/images/tab/home-active.png"
       },
@@ -32,6 +47,7 @@
         "selectedIconPath": "/images/tab/cart-active.png"
       }
     ]
+
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
@@ -42,7 +58,10 @@
     "my-test3":"/components/test3/test3",
     "my-test4":"/components/test4/test4",
     "my-test5":"/components/test5/test5",
+    "my-numbers":"/components/numbers/numbers",
     "van-button":"@vant/weapp/button/index",
-    "my-numbers":"/components/numbers/numbers"
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+    
   }
 }

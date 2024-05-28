@@ -13,9 +13,9 @@ storeBindings:{
     sum:'sum'
   },
   actions:{
-updataNum2:'uodataNum2'
+    updataNum2:'updataNum2'
   }
-}
+},
   /**
    * 组件的属性列表
    */
@@ -34,6 +34,8 @@ updataNum2:'uodataNum2'
    * 组件的方法列表
    */
   methods: {
-
+btnHandler2(e){
+    this.updataNum2(e.target.dataset.step)
+}
   }
 })
