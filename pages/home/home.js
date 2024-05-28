@@ -5,9 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+count:0
   },
 
+syncCount(e){
+// console.log('syncCount')
+// // console.log(e)
+// console.log(e.detail.value)
+this.setData({
+  count:e.detail.value
+})
+},
+getChild(){
+const child=this.selectComponent('.customA')
+// console.log(child)
+child.setData({
+  count:this.properties.count+1
+})
+child.addCount()
+},
+ async getInfo(){
+ const{data:res}=  await wx.p.request({
+    url: 'https://applet-base-api-t.itheima.net/api/get',
+    method:'GET',
+    data:{
+      name:'zs',
+      age:20
+    }
+  })
+  console.log(res)
+},
   /**
    * 生命周期函数--监听页面加载
    */
